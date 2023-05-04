@@ -1,0 +1,59 @@
+Home page
+
+contact us
+about
+cart
+
+login page
+register page
+
+/*<div>
+      <Header />
+      <AddContact />
+      <ContactList />
+      
+    </div>*/
+
+
+
+    import React from "react";
+import './App.css';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {Navbar} from "./components/navbar";
+import {Cart} from "./pages/cart/cart";
+import {Shop} from "./pages/shop/shop";
+import {Contact} from "./pages/contact";
+
+
+
+
+/*import Header from "./Header";
+import AddContact from "./AddContact";
+import ContactList from "./ContactList";
+*/
+function App() {
+  return (
+    <div className="App">
+      <Router>
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Shop/>} />
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/login"/>
+          <Route path="/register"/> 
+          <Route path="/about"/>
+          <Route path="/contact" element={<Contact/>}/>
+          
+        </Routes>
+
+
+      </Router>
+
+
+
+    </div> 
+    
+  );
+}
+
+export default App;
